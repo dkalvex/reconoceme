@@ -15,6 +15,14 @@ class Comment extends Migration
     {
         Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('date');
+            $table->time('time');
+            $table->integer('parent');
+            $table->integer('post');
+            $table->integer('recognition');
+            $table->integer('activity');
+            $table->integer('idea');
+            $table->integer('feeling');
             $table->timestamps();
         });
     }

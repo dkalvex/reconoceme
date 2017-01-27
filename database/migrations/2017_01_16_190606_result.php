@@ -15,6 +15,11 @@ class Result extends Migration
     {
         Schema::create('result', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('date');
+            $table->integer('total');
+            $table->integer('acomplishment');
+            $table->integer('indicator');
+            $table->integer('user');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class Badge extends Migration
     {
         Schema::create('badge', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('image');
+            $table->string('mission');
+            $table->integer('goal');
+            $table->integer('type');
             $table->timestamps();
         });
     }

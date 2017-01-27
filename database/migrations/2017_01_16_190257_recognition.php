@@ -15,6 +15,11 @@ class Recognition extends Migration
     {
         Schema::create('recognition', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('date');
+            $table->string('details');
+            $table->integer('user');
+            $table->integer('friend');
+            $table->integer('type');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Challenge extends Migration
+class Order extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class Challenge extends Migration
      */
     public function up()
     {
-        Schema::create('challenge', function (Blueprint $table) {
+        Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('details');
+            $table->date('order_date');
             $table->integer('points');
-            $table->string('file');
-            $table->date('date_limit');
-            $table->integer('badge');
-            $table->integer('type');
+            $table->integer('quantity');
+            $table->date('delivery_date');
+            $table->integer('gift');
+            $table->integer('user');
+            $table->integer('friend');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class Challenge extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('challenge');
+        Schema::dropIfExists('order');
     }
 }

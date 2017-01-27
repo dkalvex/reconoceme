@@ -15,6 +15,10 @@ class Question extends Migration
     {
         Schema::create('question', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('details');
+            $table->integer('order');
+            $table->integer('survey');
+            $table->integer('type');
             $table->timestamps();
         });
     }

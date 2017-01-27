@@ -15,6 +15,11 @@ class Survey extends Migration
     {
         Schema::create('survey', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('details');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('topic');
             $table->timestamps();
         });
     }

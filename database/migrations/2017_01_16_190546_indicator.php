@@ -15,6 +15,13 @@ class Indicator extends Migration
     {
         Schema::create('indicator', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('details');
+            $table->integer('goal');
+            $table->integer('points');
+            $table->integer('badge');
+            $table->integer('type');
+            $table->integer('frequency');
             $table->timestamps();
         });
     }

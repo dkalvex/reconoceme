@@ -20,6 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('active')->nullable();
+            $table->integer('boss')->nullable();
+            $table->integer('team')->nullable();
+            $table->integer('role')->nullable();
+            $table->integer('portal')->nullable();
         });
     }
 

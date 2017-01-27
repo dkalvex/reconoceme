@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Reaction extends Migration
+class BadgeType extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class Reaction extends Migration
      */
     public function up()
     {
-        Schema::create('reaction', function (Blueprint $table) {
+        Schema::create('badge_type', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class Reaction extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reaction');
+        Schema::dropIfExists('badge_type');
     }
 }

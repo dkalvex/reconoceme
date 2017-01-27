@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Communication extends Migration
+class Frequency extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class Communication extends Migration
      */
     public function up()
     {
-        Schema::create('communication', function (Blueprint $table) {
+        Schema::create('frequency', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('months');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class Communication extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communication');
+        Schema::dropIfExists('frequency');
     }
 }

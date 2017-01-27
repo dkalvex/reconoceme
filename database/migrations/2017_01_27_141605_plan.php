@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Team extends Migration
+class Plan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class Team extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('plan', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('users');
             $table->string('name');
-            $table->string('shield');
+            $table->string('modules');
+            $table->integer('pricing');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class Team extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('plan');
     }
 }

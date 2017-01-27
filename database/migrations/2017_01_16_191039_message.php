@@ -15,6 +15,12 @@ class Message extends Migration
     {
         Schema::create('message', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('details');
+            $table->date('date');
+            $table->time('time');
+            $table->integer('user');
+            $table->integer('friend');
+            $table->integer('emoticon');
             $table->timestamps();
         });
     }

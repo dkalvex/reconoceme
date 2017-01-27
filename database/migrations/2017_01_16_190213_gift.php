@@ -15,6 +15,14 @@ class Gift extends Migration
     {
         Schema::create('gift', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('detail');
+            $table->string('photo');
+            $table->integer('points');
+            $table->integer('quantity');
+            $table->integer('delivery_days');
+            $table->integer('active');
+            $table->integer('category');
             $table->timestamps();
         });
     }

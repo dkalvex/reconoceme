@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Team extends Migration
+class Post extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class Team extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('shield');
+            $table->date('publish_date');
+            $table->string('details');
+            $table->string('file');
+            $table->string('image');
+            $table->integer('type');
+            $table->integer('user');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ class Team extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('post');
     }
 }

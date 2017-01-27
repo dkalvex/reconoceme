@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Type extends Migration
+class RecognitionType extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class Type extends Migration
      */
     public function up()
     {
-        Schema::create('type', function (Blueprint $table) {
+        Schema::create('recognition_type', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('icon');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class Type extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type');
+        Schema::dropIfExists('recognition_type');
     }
 }
